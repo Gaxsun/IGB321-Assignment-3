@@ -20,7 +20,10 @@ MonoBehaviour:
   - pbDefaultEditLevel
   - pbDefaultSelectionMode
   - pb_GIWorkflowMode
+<<<<<<< HEAD
   - pbMirrorObjectScale
+=======
+>>>>>>> aa70f0d0dedf0bcc11eec06d944905343cdcbcd8
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
@@ -28,8 +31,13 @@ MonoBehaviour:
   - pbCurrentMaterialPalette
   m_Color_keys: []
   m_Material_keys: []
+<<<<<<< HEAD
   m_Bool_values: 000101
   m_Int_values: 0000000001000000020000000000000001000000
+=======
+  m_Bool_values: 01
+  m_Int_values: 00000000000000000200000000000000
+>>>>>>> aa70f0d0dedf0bcc11eec06d944905343cdcbcd8
   m_Float_values:
   - 0
   - 88
