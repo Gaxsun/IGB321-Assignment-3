@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorOpen : MonoBehaviour {
+public class DoorAnimation : MonoBehaviour {
 
     public GameObject doorPositive;
     public GameObject doorNegative;

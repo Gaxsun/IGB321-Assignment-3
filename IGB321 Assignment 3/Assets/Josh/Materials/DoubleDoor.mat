@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: StoneWall
+  m_Name: DoubleDoor
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 4
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 6beb7d1e3217ffb4f916230894df0378, type: 3}
+        m_Texture: {fileID: 2800000, guid: 895f63adaadac394d81ec7146170f82b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 98ba57879975d754b87728dd5584db9e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 798ed04008ec73747abfe93549a870c4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -72,5 +72,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.24264705, g: 0.17296511, b: 0.121323526, a: 1}
+    - _Color: {r: 0.57254905, g: 0.49803922, b: 0.47843137, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
