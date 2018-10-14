@@ -1,10 +1,15 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 191afbbeb6bfdce479d5e7826ba00e28
+=======
+guid: 757426d684215e14db2513af7fb7e848
+>>>>>>> c34960c418b2e9db40dbbc557e76a4c7fb982436
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 4
+<<<<<<< HEAD
 =======
 guid: 035b840f8a86c514f95d9b3b2247df83
 TextureImporter:
@@ -12,6 +17,8 @@ TextureImporter:
   externalObjects: {}
   serializedVersion: 7
 >>>>>>> aa70f0d0dedf0bcc11eec06d944905343cdcbcd8
+=======
+>>>>>>> c34960c418b2e9db40dbbc557e76a4c7fb982436
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
@@ -30,10 +37,13 @@ TextureImporter:
     normalMapFilter: 0
   isReadable: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
 >>>>>>> aa70f0d0dedf0bcc11eec06d944905343cdcbcd8
+=======
+>>>>>>> c34960c418b2e9db40dbbc557e76a4c7fb982436
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -45,10 +55,14 @@ TextureImporter:
     filterMode: -1
     aniso: -1
 <<<<<<< HEAD
+<<<<<<< HEAD
     mipBias: -1
 =======
     mipBias: -100
 >>>>>>> aa70f0d0dedf0bcc11eec06d944905343cdcbcd8
+=======
+    mipBias: -1
+>>>>>>> c34960c418b2e9db40dbbc557e76a4c7fb982436
     wrapU: -1
     wrapV: -1
     wrapW: -1
@@ -69,19 +83,26 @@ TextureImporter:
   textureType: 0
   textureShape: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   singleChannelComponent: 0
 >>>>>>> aa70f0d0dedf0bcc11eec06d944905343cdcbcd8
+=======
+>>>>>>> c34960c418b2e9db40dbbc557e76a4c7fb982436
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
+<<<<<<< HEAD
 <<<<<<< HEAD
   - buildTarget: DefaultTexturePlatform
 =======
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
 >>>>>>> aa70f0d0dedf0bcc11eec06d944905343cdcbcd8
+=======
+  - buildTarget: DefaultTexturePlatform
+>>>>>>> c34960c418b2e9db40dbbc557e76a4c7fb982436
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -97,6 +118,7 @@ TextureImporter:
     outline: []
     physicsShape: []
 <<<<<<< HEAD
+<<<<<<< HEAD
   spritePackingTag: 
 =======
     bones: []
@@ -109,6 +131,9 @@ TextureImporter:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
 >>>>>>> aa70f0d0dedf0bcc11eec06d944905343cdcbcd8
+=======
+  spritePackingTag: 
+>>>>>>> c34960c418b2e9db40dbbc557e76a4c7fb982436
   userData: 
   assetBundleName: 
   assetBundleVariant: 
