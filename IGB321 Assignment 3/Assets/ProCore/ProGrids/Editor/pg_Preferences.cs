@@ -86,7 +86,7 @@ namespace ProGrids
 					ResetPrefs();
 			}
 
-			if (GUI.changed)
+			if (UnityEngine.GUI.changed)
 				SetPreferences();
 		}
 

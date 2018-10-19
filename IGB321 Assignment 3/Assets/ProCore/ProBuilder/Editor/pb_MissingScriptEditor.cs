@@ -294,7 +294,7 @@ namespace ProBuilder2.EditorCommon
 				return;
 			}
 
-			GUI.backgroundColor = Color.green;
+            UnityEngine.GUI.backgroundColor = Color.green;
 
 			if(!doFix)
 			{
@@ -305,7 +305,7 @@ namespace ProBuilder2.EditorCommon
 				}
 			}
 
-			GUI.backgroundColor = Color.cyan;
+            UnityEngine.GUI.backgroundColor = Color.cyan;
 
 			if((doFix && Event.current.type == EventType.Repaint) || GUILayout.Button("Reconnect"))
 			{
@@ -338,7 +338,7 @@ namespace ProBuilder2.EditorCommon
 				GUIUtility.ExitGUI();
 			}
 
-			GUI.backgroundColor = Color.white;
+            UnityEngine.GUI.backgroundColor = Color.white;
 		}
 
 		/**

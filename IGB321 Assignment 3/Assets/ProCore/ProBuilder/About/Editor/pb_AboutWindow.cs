@@ -338,10 +338,10 @@ namespace ProBuilder2.EditorCommon
 		void HorizontalLine()
 		{
 			Rect r = GUILayoutUtility.GetLastRect();
-			Color og = GUI.backgroundColor;
-			GUI.backgroundColor = Color.black;
-			GUI.Box(new Rect(0f, r.y + r.height + 2, Screen.width, 2f), "");
-			GUI.backgroundColor = og;
+			Color og = UnityEngine.GUI.backgroundColor;
+            UnityEngine.GUI.backgroundColor = Color.black;
+            UnityEngine.GUI.Box(new Rect(0f, r.y + r.height + 2, Screen.width, 2f), "");
+            UnityEngine.GUI.backgroundColor = og;
 
 			GUILayout.Space(6);
 		}

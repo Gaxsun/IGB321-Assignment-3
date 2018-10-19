@@ -288,8 +288,8 @@ public class pb_Preferences : Editor
 	static void ShortcutSelectPanel()
 	{
 		GUILayout.Space(4);
-		GUI.contentColor = Color.white;
-		GUI.Box(selectBox, "");
+        UnityEngine.GUI.contentColor = Color.white;
+        UnityEngine.GUI.Box(selectBox, "");
 
 		GUIStyle labelStyle = GUIStyle.none;
 
@@ -305,14 +305,14 @@ public class pb_Preferences : Editor
 		{
 			if(n == shortcutIndex)
 			{
-				GUI.backgroundColor = new Color(0.23f, .49f, .89f, 1f);
+                UnityEngine.GUI.backgroundColor = new Color(0.23f, .49f, .89f, 1f);
 					labelStyle.normal.background = EditorGUIUtility.whiteTexture;
 					Color oc = labelStyle.normal.textColor;
 					labelStyle.normal.textColor = Color.white;
 					GUILayout.Box(defaultShortcuts[n].action, labelStyle, GUILayout.MinHeight(CELL_HEIGHT), GUILayout.MaxHeight(CELL_HEIGHT));
 					labelStyle.normal.background = null;
 					labelStyle.normal.textColor = oc;
-				GUI.backgroundColor = Color.white;
+                UnityEngine.GUI.backgroundColor = Color.white;
 			}
 			else
 			{
