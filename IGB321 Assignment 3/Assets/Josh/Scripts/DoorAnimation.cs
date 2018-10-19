@@ -8,6 +8,7 @@ public class DoorAnimation : MonoBehaviour {
     public GameObject doorNegative;
 
     public bool open = false;
+    public bool locked = false;
 
     private Animation doorAnimPositive;
     private Animation doorAnimNegative;
@@ -31,7 +32,7 @@ public class DoorAnimation : MonoBehaviour {
 
     public void DoorInteract()
     {
-        if (!doorAnimPositive.isPlaying || !doorAnimNegative.isPlaying)
+        if ((!doorAnimPositive.isPlaying || !doorAnimNegative.isPlaying) && !locked)
         {
             if (!open)
             {
