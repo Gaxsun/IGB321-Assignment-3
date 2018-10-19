@@ -42,7 +42,7 @@ namespace ProGrids
 			content.gc.image = enabled ? content.image_on : content.image_off;
 			content.gc.text = content.gc.image == null ? (enabled ? content.text_on : content.text_off) : "";
 
-			return GUI.Button(r, content.gc, content.gc.image != null ? imageStyle : altStyle);
+			return UnityEngine.GUI.Button(r, content.gc, content.gc.image != null ? imageStyle : altStyle);
 		}
 	}
 }

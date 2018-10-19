@@ -76,7 +76,7 @@ namespace ProBuilder2.Examples
 		void OnGUI()
 		{
 			// To reset, nuke the pb_Object and build a new one.
-			if(GUI.Button(new Rect(5, Screen.height - 25, 80, 20), "Reset"))
+			if(UnityEngine.GUI.Button(new Rect(5, Screen.height - 25, 80, 20), "Reset"))
 			{
 				currentSelection.Destroy();
 				Destroy(preview.gameObject);

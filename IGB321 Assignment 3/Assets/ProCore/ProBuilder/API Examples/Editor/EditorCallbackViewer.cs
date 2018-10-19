@@ -111,10 +111,10 @@ class EditorCallbackViewer : EditorWindow
 
 			GUILayout.FlexibleSpace();
 
-			GUI.backgroundColor = collapse ? disabledColor : Color.white;
+        UnityEngine.GUI.backgroundColor = collapse ? disabledColor : Color.white;
 			if(GUILayout.Button("Collapse", EditorStyles.toolbarButton))
 				collapse = !collapse;
-			GUI.backgroundColor = Color.white;
+        UnityEngine.GUI.backgroundColor = Color.white;
 
 			if(GUILayout.Button("Clear", EditorStyles.toolbarButton))
 				logs.Clear();

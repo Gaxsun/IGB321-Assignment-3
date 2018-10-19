@@ -214,11 +214,11 @@ public class pg_AboutWindow : EditorWindow
 		headerTextStyle = headerTextStyle ?? new GUIStyle( EditorStyles.boldLabel );//GUI.skin.label);
 		headerTextStyle.fontSize = 16;
 		
-		linkTextStyle = linkTextStyle ?? new GUIStyle( GUI.skin.label );//GUI.skin.label);
+		linkTextStyle = linkTextStyle ?? new GUIStyle(UnityEngine.GUI.skin.label );//GUI.skin.label);
 		linkTextStyle.normal.textColor = LinkColor; 
 		linkTextStyle.alignment = TextAnchor.MiddleLeft;
 
-		boldTextStyle = boldTextStyle ?? new GUIStyle( GUI.skin.label );//GUI.skin.label);
+		boldTextStyle = boldTextStyle ?? new GUIStyle(UnityEngine.GUI.skin.label );//GUI.skin.label);
 		boldTextStyle.fontStyle = FontStyle.Bold;
 		boldTextStyle.alignment = TextAnchor.MiddleLeft;
 
@@ -226,7 +226,7 @@ public class pg_AboutWindow : EditorWindow
 		// richTextLabel.richText = true;
 		// #endif
 
-		advertisementStyle = advertisementStyle ?? new GUIStyle(GUI.skin.button);
+		advertisementStyle = advertisementStyle ?? new GUIStyle(UnityEngine.GUI.skin.button);
 		advertisementStyle.normal.background = null;
 		
 		if(banner != null)
@@ -332,10 +332,10 @@ public class pg_AboutWindow : EditorWindow
 	void HorizontalLine()
 	{
 		Rect r = GUILayoutUtility.GetLastRect();
-		Color og = GUI.backgroundColor;
-		GUI.backgroundColor = Color.black;
-		GUI.Box(new Rect(0f, r.y + r.height + 2, Screen.width, 2f), "");
-		GUI.backgroundColor = og;
+		Color og = UnityEngine.GUI.backgroundColor;
+        UnityEngine.GUI.backgroundColor = Color.black;
+        UnityEngine.GUI.Box(new Rect(0f, r.y + r.height + 2, Screen.width, 2f), "");
+        UnityEngine.GUI.backgroundColor = og;
 
 		GUILayout.Space(6);
 	}

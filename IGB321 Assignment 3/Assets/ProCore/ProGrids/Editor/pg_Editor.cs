@@ -674,17 +674,17 @@ namespace ProGrids
 
 		void DrawSceneGUI()
 		{
-			GUI.backgroundColor = menuBackgroundColor;
+            UnityEngine.GUI.backgroundColor = menuBackgroundColor;
 			backgroundRect.x = r.x - 4;
 			backgroundRect.y = 0;
 			backgroundRect.width = r.width + 8;
 			backgroundRect.height = r.y + r.height + PAD;
-			GUI.Box(backgroundRect, "", backgroundStyle);
+            UnityEngine.GUI.Box(backgroundRect, "", backgroundStyle);
 
 			// when hit testing mouse for showing the background, add some leeway
 			backgroundRect.width += 32f;
 			backgroundRect.height += 32f;
-			GUI.backgroundColor = Color.white;
+            UnityEngine.GUI.backgroundColor = Color.white;
 
 			if (!guiInitialized)
 			{
@@ -717,7 +717,7 @@ namespace ProGrids
 
 			gc_SnapIncrement.text = t_snapValue.ToString("#.####");
 
-			if (GUI.Button(r, gc_SnapIncrement, gridButtonStyleBlank))
+			if (UnityEngine.GUI.Button(r, gc_SnapIncrement, gridButtonStyleBlank))
 			{
 #if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
 		// On Mac ShowAsDropdown and ShowAuxWindow both throw stack pop exceptions when initialized.
@@ -819,14 +819,14 @@ namespace ProGrids
 			extendoButtonRect.width = r.width;
 			extendoButtonRect.height = r.height;
 
-			GUI.backgroundColor = extendoButtonHovering ? extendoHoverColor : extendoNormalColor;
+            UnityEngine.GUI.backgroundColor = extendoButtonHovering ? extendoHoverColor : extendoNormalColor;
 			gc_ExtendMenu.text = icon_extendoOpen == null ? (menuOpen ? "Close" : "Open") : "";
-			if (GUI.Button(r, gc_ExtendMenu, icon_extendoOpen ? extendoStyle : gridButtonStyleBlank))
+			if (UnityEngine.GUI.Button(r, gc_ExtendMenu, icon_extendoOpen ? extendoStyle : gridButtonStyleBlank))
 			{
 				ToggleMenuVisibility();
 				extendoButtonHovering = false;
 			}
-			GUI.backgroundColor = Color.white;
+            UnityEngine.GUI.backgroundColor = Color.white;
 		}
 
 		void ToggleMenuVisibility()
