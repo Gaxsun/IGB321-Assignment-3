@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class DoorAnimation : MonoBehaviour {
 
@@ -9,9 +10,12 @@ public class DoorAnimation : MonoBehaviour {
 
     public bool open = false;
     public bool locked = false;
+    public bool DemonOpen = false;
 
     private Animation doorAnimPositive;
     private Animation doorAnimNegative;
+
+    public NavMeshObstacle loch;
 
     private void Start()
     {
@@ -27,25 +31,65 @@ public class DoorAnimation : MonoBehaviour {
         {
             doorAnimNegative = doorNegative.GetComponent<Animation>();
         }
-        
+        loch = this.gameObject.GetComponent<NavMeshObstacle>();
+    }
+
+    void Update() {
+        if (locked) {
+            loch.enabled = true;
+        }
     }
 
     public void DoorInteract()
     {
-        if ((!doorAnimPositive.isPlaying || !doorAnimNegative.isPlaying) && !locked)
+
+        if (!doorAnimNegative.isPlaying && !locked)
         {
+            
             if (!open)
             {
-                doorAnimPositive.Play("PositiveDoorOpen");
                 doorAnimNegative.Play("NegativeDoorOpen");
-                open = true;
             }
             else
             {
-                doorAnimPositive.Play("PositiveDoorClose");
                 doorAnimNegative.Play("NegativeDoorClose");
-                open = false;
             }
         }
+
+        if (doorAnimPositive != null) {
+            if (!doorAnimPositive.isPlaying && !locked) {
+                if (!open) {
+                    doorAnimPositive.Play("PositiveDoorOpen");
+                } else {
+                    doorAnimPositive.Play("PositiveDoorClose");
+                }
+            }          
+        }
+        //if (!open) {
+        //    open = true;
+        //} else {
+        //    open = false;
+        //}
     }
+
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "Player" || (other.tag == "Enemy" && DemonOpen == true)) {
+            DoorInteract();
+            open = true;
+        }
+    }
+
+    void OnTriggerStay(Collider other) {
+        if (other.tag == "Player" || (other.tag == "Enemy" && DemonOpen == true)) {
+            open = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other) {
+        if ( other.tag == "Player" || (other.tag == "Enemy" && DemonOpen == true)) {
+            DoorInteract();
+            open = false;
+        }
+    }
+
 }
