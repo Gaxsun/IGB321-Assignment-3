@@ -10,7 +10,7 @@ public class DoorAnimation : MonoBehaviour {
 
     public bool open = false;
     public bool locked = false;
-    public bool DemonLocked = false;
+    public bool DemonOpen = false;
 
     private Animation doorAnimPositive;
     private Animation doorAnimNegative;
@@ -45,15 +45,14 @@ public class DoorAnimation : MonoBehaviour {
 
         if (!doorAnimNegative.isPlaying && !locked)
         {
+            
             if (!open)
             {
                 doorAnimNegative.Play("NegativeDoorOpen");
-                open = true;
             }
             else
             {
                 doorAnimNegative.Play("NegativeDoorClose");
-                open = false;
             }
         }
 
@@ -61,19 +60,35 @@ public class DoorAnimation : MonoBehaviour {
             if (!doorAnimPositive.isPlaying && !locked) {
                 if (!open) {
                     doorAnimPositive.Play("PositiveDoorOpen");
-                    open = true;
                 } else {
                     doorAnimPositive.Play("PositiveDoorClose");
-                    open = false;
                 }
-            }
+            }          
         }
+        //if (!open) {
+        //    open = true;
+        //} else {
+        //    open = false;
+        //}
     }
 
     void OnTriggerEnter(Collider other) {
-        print(other.tag);
-        if (other.tag == "Player") {
+        if (other.tag == "Player" || (other.tag == "Enemy" && DemonOpen == true)) {
             DoorInteract();
+            open = true;
+        }
+    }
+
+    void OnTriggerStay(Collider other) {
+        if (other.tag == "Player" || (other.tag == "Enemy" && DemonOpen == true)) {
+            open = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other) {
+        if ( other.tag == "Player" || (other.tag == "Enemy" && DemonOpen == true)) {
+            DoorInteract();
+            open = false;
         }
     }
 

@@ -7,6 +7,7 @@ public class goToNextScene : MonoBehaviour {
 
     public int circleCounter = 0;
     public GameObject doorToUnlock;
+    public bool allDemonsDead = false;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +16,7 @@ public class goToNextScene : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (circleCounter >= 3) {
+        if (circleCounter >= 3 && allDemonsDead) {
             doorToUnlock.GetComponent<DoorAnimation>().locked = false;
         }
 	}

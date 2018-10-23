@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour {
                     }
                     
                     if (Vector3.Distance(transform.position, patrolRoute[currentPatrolIndex].transform.position) <= 1) {
-                        if (currentPatrolIndex+1 <= patrolRoute.Length) {
+                        if (currentPatrolIndex+1 < patrolRoute.Length) {
                             currentPatrolIndex++;
                         } else {
                             currentPatrolIndex = 0;
