@@ -43,7 +43,6 @@ public class Player : MonoBehaviour {
 
         RaycastHit hit;
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-
         if (Physics.Raycast(ray, out hit)) {
             if(hit.transform.tag == "Ground") {
                 moveTo = hit.point;
@@ -73,7 +72,7 @@ public class Player : MonoBehaviour {
 
             if (Time.time > fireTimer) {
 
-                Instantiate(projectile, fireLocation.transform.position, fireLocation.transform.rotation);
+                //Instantiate(projectile, fireLocation.transform.position, fireLocation.transform.rotation);
 
                 fireTimer = Time.time + fireTime;
             }

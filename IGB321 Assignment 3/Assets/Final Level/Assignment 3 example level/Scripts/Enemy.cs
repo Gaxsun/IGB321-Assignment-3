@@ -17,6 +17,9 @@ public class Enemy : MonoBehaviour {
     private float damageTimer;
     private float damageTime = 1.0f;
 
+    public GameObject[] patrolRoute;
+    public int currentPatrolIndex = 0;
+
     // Use this for initialization
     void Start () {
         agent = GetComponent<NavMeshAgent>();
@@ -41,6 +44,21 @@ public class Enemy : MonoBehaviour {
 
                     //Move towards player
                     agent.SetDestination(player.transform.position);
+                } else {
+                    //patrol
+                    if (patrolRoute[currentPatrolIndex] != null) {
+                        agent.SetDestination(patrolRoute[currentPatrolIndex].transform.position);
+                    }
+                    
+                    if (Vector3.Distance(transform.position, patrolRoute[currentPatrolIndex].transform.position) <= 1) {
+                        if (currentPatrolIndex+1 <= patrolRoute.Length) {
+                            currentPatrolIndex++;
+                        } else {
+                            currentPatrolIndex = 0;
+                        }
+                        
+                    }
+                    
                 }
             }
         }
