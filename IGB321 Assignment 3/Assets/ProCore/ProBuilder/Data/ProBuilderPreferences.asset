@@ -31,12 +31,12 @@ MonoBehaviour:
   - pbCurrentMaterialPalette
   m_Color_keys: []
   m_Material_keys: []
-  m_Bool_values: 00000100
-  m_Int_values: 01000000020000000000000000000000
+  m_Bool_values: 00010100
+  m_Int_values: 00000000010000000000000000000000
   m_Float_values:
   - 0
   - 0
-  - 0.05
+  - 0.005
   - 1
   - 0.3388913
   m_String_values:
