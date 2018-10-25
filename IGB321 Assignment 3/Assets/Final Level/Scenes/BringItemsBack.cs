@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BringItemsBack : MonoBehaviour {
-
+    public int numOfDemons = 1;
+    public int demonsDead = 0;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,8 +18,13 @@ public class BringItemsBack : MonoBehaviour {
     public void OnTriggerEnter(Collider other) {
 
         if (other.tag == "Enemy" && GameObject.FindGameObjectWithTag("loadnextscene").GetComponent<goToNextScene>().circleCounter >= 3) {
-            GameObject.FindGameObjectWithTag("loadnextscene").GetComponent<goToNextScene>().allDemonsDead = true;
             Destroy(other.gameObject);
+            demonsDead++;
+            if (numOfDemons <= demonsDead) {
+                GameObject.FindGameObjectWithTag("loadnextscene").GetComponent<goToNextScene>().allDemonsDead = true;
+                GameObject.FindGameObjectWithTag("workyabastard").GetComponent<DoorAnimation>().locked = false;
+            }
+            //print(this.gameObject.GetComponent<DoorAnimation>() == null);
         }
 
         if (other.tag == "Player") {

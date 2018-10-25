@@ -17,7 +17,6 @@ public class collectableItem : MonoBehaviour {
 	}
 
     void OnTriggerEnter(Collider other) {
-        print(other.tag);
         if (other.tag == "Player") {
             GameObject.FindGameObjectWithTag("loadnextscene").GetComponent<goToNextScene>().circleCounter++;
             //transform.position = CollectionLocation.transform.position;

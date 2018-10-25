@@ -28,15 +28,13 @@ public class Enemy : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        if (!player)
+        if (!player) {
             player = GameObject.FindGameObjectWithTag("Player");
+        }
         else if (player) {
-
-
             //Raycast in direction of Player
             RaycastHit hit;
             if(Physics.Raycast(transform.position, -(transform.position - player.transform.position).normalized, out hit, agroRange)) {
-
                 //If Raycast hits player
                 if (hit.transform.tag == "Player") {
 
@@ -49,17 +47,32 @@ public class Enemy : MonoBehaviour {
                     if (patrolRoute[currentPatrolIndex] != null) {
                         agent.SetDestination(patrolRoute[currentPatrolIndex].transform.position);
                     }
-                    
+
                     if (Vector3.Distance(transform.position, patrolRoute[currentPatrolIndex].transform.position) <= 1) {
-                        if (currentPatrolIndex+1 < patrolRoute.Length) {
+                        if (currentPatrolIndex + 1 < patrolRoute.Length) {
                             currentPatrolIndex++;
                         } else {
                             currentPatrolIndex = 0;
                         }
-                        
+
                     }
-                    
+
                 }
+            } else {
+                //patrol
+                if (patrolRoute[currentPatrolIndex] != null) {
+                    agent.SetDestination(patrolRoute[currentPatrolIndex].transform.position);
+                }
+
+                if (Vector3.Distance(transform.position, patrolRoute[currentPatrolIndex].transform.position) <= 1) {
+                    if (currentPatrolIndex + 1 < patrolRoute.Length) {
+                        currentPatrolIndex++;
+                    } else {
+                        currentPatrolIndex = 0;
+                    }
+
+                }
+
             }
         }
     }

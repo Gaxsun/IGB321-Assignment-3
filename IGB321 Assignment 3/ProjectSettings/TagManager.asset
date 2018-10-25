@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - loadnextscene
   - collectable
+  - workyabastard
   layers:
   - Default
   - TransparentFX

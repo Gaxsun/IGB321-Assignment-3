@@ -35,19 +35,22 @@ public class DoorAnimation : MonoBehaviour {
     }
 
     void Update() {
-        if (locked) {
-            loch.enabled = true;
+        if (loch != null) {
+            if (locked) {
+                loch.enabled = true;
+            } else {
+                loch.enabled = false;
+            }
         }
     }
 
     public void DoorInteract()
     {
-
         if (!doorAnimNegative.isPlaying && !locked)
         {
-            
             if (!open)
             {
+                print("check");
                 doorAnimNegative.Play("NegativeDoorOpen");
             }
             else
