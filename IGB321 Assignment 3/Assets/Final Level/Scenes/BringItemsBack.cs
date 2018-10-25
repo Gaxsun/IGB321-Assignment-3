@@ -31,7 +31,7 @@ public class BringItemsBack : MonoBehaviour {
             GameObject[] collectables = GameObject.FindGameObjectsWithTag("collectable");
             foreach (GameObject i in collectables) {
                 if (i.transform.position == new Vector3(100,0,100)) {
-                    print(i.transform.position);
+                    //print(i.transform.position);
                     i.GetComponent<collectableItem>().sendToCircle();
                 }
             }
