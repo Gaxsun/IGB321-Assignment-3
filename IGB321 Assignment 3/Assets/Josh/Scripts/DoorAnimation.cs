@@ -50,7 +50,7 @@ public class DoorAnimation : MonoBehaviour {
         {
             if (!open)
             {
-                print("check");
+                //print("check");
                 doorAnimNegative.Play("NegativeDoorOpen");
             }
             else
