@@ -9,6 +9,8 @@ public class DoorAnimation : MonoBehaviour {
     public GameObject doorNegative;
 
     public bool open = false;
+    public bool anotherInTrigger = false;
+    public int numInTrigger = 0;
     public bool locked = false;
     public bool DemonOpen = false;
 
@@ -41,6 +43,15 @@ public class DoorAnimation : MonoBehaviour {
             } else {
                 loch.enabled = false;
             }
+        }
+
+        if (numInTrigger == 0 && open) {
+            DoorInteract();
+            open = false;
+        }
+        if (numInTrigger != 0 && !open) {
+            DoorInteract();
+            open = true;
         }
     }
 
@@ -76,23 +87,34 @@ public class DoorAnimation : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-        if (other.tag == "Player" || (other.tag == "Enemy" && DemonOpen == true)) {
-            DoorInteract();
-            open = true;
+        if (other.tag == "Player" || other.tag == "Enemy") {
+            numInTrigger++;
         }
+       // if (other.tag == "Player" || (other.tag == "Enemy" && DemonOpen == true)) {
+        //    DoorInteract();
+        //    open = true;
+            
+        //}
     }
 
     void OnTriggerStay(Collider other) {
-        if (other.tag == "Player" || (other.tag == "Enemy" && DemonOpen == true)) {
-            open = true;
-        }
+        //if (other.tag == "Player" || (other.tag == "Enemy" && DemonOpen == true)) {
+        //    open = true;
+        //}
+        //if (numInTrigger > 1) {
+        //    anotherInTrigger = true;
+        //} else {
+        //    anotherInTrigger = false;
+        //}
     }
 
     void OnTriggerExit(Collider other) {
-        if ( other.tag == "Player" || (other.tag == "Enemy" && DemonOpen == true)) {
-            DoorInteract();
-            open = false;
+        if (other.tag == "Player" || other.tag == "Enemy") {
+            numInTrigger--;
+        }
+        //if (!anotherInTrigger && (other.tag == "Player" || (other.tag == "Enemy" && DemonOpen == true))) {
+        //    DoorInteract();
+        //    open = false;
         }
     }
-
-}
+//}
