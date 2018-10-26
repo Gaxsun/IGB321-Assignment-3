@@ -5,6 +5,8 @@ using UnityEngine;
 public class BringItemsBack : MonoBehaviour {
     public int numOfDemons = 1;
     public int demonsDead = 0;
+
+    private int returnedObjects = 0;
 	// Use this for initialization
 	void Start () {
 		
@@ -29,11 +31,18 @@ public class BringItemsBack : MonoBehaviour {
 
         if (other.tag == "Player") {
             GameObject[] collectables = GameObject.FindGameObjectsWithTag("collectable");
+            GameObject.FindGameObjectWithTag("mainCanvas").GetComponent<GUI_Controller>().circleFindObjectvieUpdate();
             foreach (GameObject i in collectables) {
                 if (i.transform.position == new Vector3(100,0,100)) {
                     //print(i.transform.position);
                     i.GetComponent<collectableItem>().sendToCircle();
+                    returnedObjects += 1;
                 }
+            }
+
+            if (returnedObjects >= 3)
+            {
+                GameObject.FindGameObjectWithTag("mainCanvas").GetComponent<GUI_Controller>().repairObjectiveUpdate();
             }
         }
     }

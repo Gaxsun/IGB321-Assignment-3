@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
     public Camera camera;
     public Vector3 moveTo;
 
+    public bool moveLock = false;
+
     public float health = 100.0f;
 
     public GameObject projectile;
@@ -23,13 +25,15 @@ public class Player : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
 
         moveTo = transform.position;
+
+        moveLock = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
         //Basic Player Movement - Left Mouse Button on Environment
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(0) && !moveLock)
             PlayerMovement();
 
         //Basic Player Weapon - Right Mouse Button

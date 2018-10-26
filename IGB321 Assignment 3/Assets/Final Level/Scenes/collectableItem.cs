@@ -5,6 +5,7 @@ using UnityEngine;
 public class collectableItem : MonoBehaviour {
 
     public GameObject CollectionLocation;
+    public string itemType;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,7 @@ public class collectableItem : MonoBehaviour {
             GameObject.FindGameObjectWithTag("loadnextscene").GetComponent<goToNextScene>().circleCounter++;
             //transform.position = CollectionLocation.transform.position;
             transform.position = new Vector3(100,0,100);
+            GameObject.FindGameObjectWithTag("mainCanvas").GetComponent<GUI_Controller>().itemObjectiveUpdate(itemType);
         }
     }
 
